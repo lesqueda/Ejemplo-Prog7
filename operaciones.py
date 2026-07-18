@@ -1,4 +1,12 @@
 import math
+def suma(a, b):
+    """Retorna la suma de dos números."""
+    return a + b
+
+
+def resta(a, b):
+    """Retorna la resta de dos números (a - b)."""
+    return a - b
 
 def potencia(base, exponente):
     """
