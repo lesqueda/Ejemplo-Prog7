@@ -1,10 +1,10 @@
 
-from suma import sumar
-from resta import restar
-from multiplicacion import multiplicar
-from division import dividir
-from potencia import potencia
-from raiz import raiz_cuadrada
+from operaciones import suma
+from operaciones import resta
+from operaciones import multiplicacion
+from operaciones import division
+from operaciones import potencia
+from operaciones import raiz_cuadrada
 from historial import agregar_operacion, ver_historial
 
 while True:
@@ -20,23 +20,27 @@ while True:
 
     opcion = input("Seleccione una opción: ")
 
+    a = int(input("Agregar valor 1"))
+
+    b = int(input("agregar valor 2"))
+
     if opcion == "1":
-        sumar()
+        suma(a,b)
 
     elif opcion == "2":
-        restar()
+        resta(a,b)
 
     elif opcion == "3":
-        multiplicar()
+        multiplicacion(a,b)
 
     elif opcion == "4":
-        dividir()
+        division(a,b)
 
     elif opcion == "5":
-        potencia()
+        potencia(a,b)
 
     elif opcion == "6":
-        raiz_cuadrada()
+        raiz_cuadrada(a)
 
     elif opcion == "7":
         ver_historial()
