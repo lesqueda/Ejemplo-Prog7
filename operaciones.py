@@ -1,20 +1,13 @@
 import math
 
 def multiplicacion(a,b):
-    resultado = a * b
-    return resultado
+    respuesta = a * b
+    return respuesta
 
 def division (a,b):
-    resultado = a /b
-    return resultado
+    respuestas = a /b
+    return respuestas
 
-def multiplicacion(a,b):
-    resultado = a * b
-    return resultado
-
-def division (a,b):
-    resultado = a /b
-    return resultado
 
 def potencia(base, exponente):
     """
