@@ -8,6 +8,13 @@ from operaciones import (
 )
 
 from historial import agregar_operacion, mostrar_historial
+from operaciones import suma
+from operaciones import resta
+from operaciones import multiplicacion
+from operaciones import division
+from operaciones import potencia
+from operaciones import raiz_cuadrada
+from historial import agregar_operacion, ver_historial
 
 while True:
     print("\n===== CALCULADORA =====")
@@ -64,6 +71,27 @@ while True:
         resultado = potencia(base, exponente)
         print("Resultado:", resultado)
         agregar_operacion(f"{base}^{exponente} = {resultado}")
+    a = int(input("Agregar valor 1"))
+
+    b = int(input("agregar valor 2"))
+
+    if opcion == "1":
+        suma(a,b)
+
+    elif opcion == "2":
+        resta(a,b)
+
+    elif opcion == "3":
+        multiplicacion(a,b)
+
+    elif opcion == "4":
+        division(a,b)
+
+    elif opcion == "5":
+        potencia(a,b)
+
+    elif opcion == "6":
+        raiz_cuadrada(a)
 
     elif opcion == 6:
         numero = float(input("Ingrese un número: "))
