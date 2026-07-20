@@ -1,11 +1,13 @@
+from operaciones import (
+    suma,
+    resta,
+    multiplicacion,
+    division,
+    potencia,
+    raiz_cuadrada
+)
 
-from suma import sumar
-from resta import restar
-from multiplicacion import multiplicar
-from division import dividir
-from potencia import potencia
-from raiz import raiz_cuadrada
-from historial import agregar_operacion, ver_historial
+from historial import agregar_operacion, mostrar_historial
 
 while True:
     print("\n===== CALCULADORA =====")
@@ -18,34 +20,67 @@ while True:
     print("7. Ver historial")
     print("8. Salir")
 
-    opcion = input("Seleccione una opción: ")
+    try:
+        opcion = int(input("Seleccione una opción: "))
+    except ValueError:
+        print("Debe ingresar un número del 1 al 8.")
+        continue
 
-    if opcion == "1":
-        sumar()
+    if opcion == 1:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = suma(a, b)
+        print("Resultado:", resultado)
+        agregar_operacion(f"{a} + {b} = {resultado}")
 
-    elif opcion == "2":
-        restar()
+    elif opcion == 2:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = resta(a, b)
+        print("Resultado:", resultado)
+        agregar_operacion(f"{a} - {b} = {resultado}")
 
-    elif opcion == "3":
-        multiplicar()
+    elif opcion == 3:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = multiplicacion(a, b)
+        print("Resultado:", resultado)
+        agregar_operacion(f"{a} * {b} = {resultado}")
 
-    elif opcion == "4":
-        dividir()
+    elif opcion == 4:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
 
-    elif opcion == "5":
-        potencia()
+        if b == 0:
+            print("Error: no se puede dividir entre cero.")
+        else:
+            resultado = division(a, b)
+            print("Resultado:", resultado)
+            agregar_operacion(f"{a} / {b} = {resultado}")
 
-    elif opcion == "6":
-        raiz_cuadrada()
+    elif opcion == 5:
+        base = float(input("Ingrese la base: "))
+        exponente = float(input("Ingrese el exponente: "))
+        resultado = potencia(base, exponente)
+        print("Resultado:", resultado)
+        agregar_operacion(f"{base}^{exponente} = {resultado}")
 
-    elif opcion == "7":
-        ver_historial()
+    elif opcion == 6:
+        numero = float(input("Ingrese un número: "))
 
-    elif opcion == "8":
+        try:
+            resultado = raiz_cuadrada(numero)
+            print("Resultado:", resultado)
+            agregar_operacion(f"√{numero} = {resultado}")
+        except ValueError as e:
+            print(e)
+
+    elif opcion == 7:
+        mostrar_historial()
+
+    elif opcion == 8:
         print("Gracias por usar la calculadora.")
         break
 
     else:
         print("Opción no válida. Intente nuevamente.")
-
-print("Hello World - Equipo")
